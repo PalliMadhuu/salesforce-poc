@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-11-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="My Tickets" icon-name="custom:custom63">
+        <template if:true={tickets.length}>
+            <lightning-datatable
+                key-field="Id"
+                data={tickets}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+        <template if:false={tickets.length}>
+            <p class="slds-text-align_center slds-m-around_medium">No tickets found.</p>
+        </template>
+    </lightning-card>
+</template>
